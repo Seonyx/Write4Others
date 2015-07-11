@@ -47,7 +47,7 @@ Public Class addnewchaptereditor
 
     Sub LoadParams()
         Dim seriespopulatedflag As Boolean = False
-        'chaptertext.WebEditor.ToolBar = ToolBar.FullWithTemplates
+        chaptertext.WebEditor.ToolBar = ToolBar.FullWithTemplates
         REM fuck this - we have to have a chapter number incoming on the qrystring otherwise we redirect
         REM when we get the chapter number, lookup the series number
         mypageId = WebUtils.ParseInt32FromQueryString("pageid", mypageId)
@@ -274,9 +274,7 @@ Public Class addnewchaptereditor
 
             cmd.Connection = cn
             cmd.CommandText = strSQL
-            'Response.Write(GetSQL(cmd))
             Dim tmpval As String = GetSQL(cmd)
-            'Response.End()
             cmd.ExecuteNonQuery()
             cn.Close()
             Response.Redirect(home)
@@ -298,7 +296,6 @@ Public Class addnewchaptereditor
         End If
 
         Dim msg As String = ""
-
         msg = cmd.CommandText
 
         For Each p As System.Data.SqlClient.SqlParameter In cmd.Parameters
@@ -344,12 +341,6 @@ Public Class addnewchaptereditor
     End Sub
 
     Protected Sub editchapterbutton_Click(sender As Object, e As EventArgs) Handles editchapterbutton.Click
-        'Page.Validate()
-        'If Page.IsValid Then
-        '    updatedatabase()
-        'Else
-
-        'End If
         If IsPostBack Then
             updatedatabase()
         End If

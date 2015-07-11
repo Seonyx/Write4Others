@@ -65,14 +65,16 @@ Public Class addnewserieseditor
             'existingseriesdropdown.Visible = False
             'msg_existingseriesdropdown.Visible = False
             Panel1.Visible = False
-            gopopulateform(seriesnumber)
+            If Not IsPostBack Then
+                gopopulateform(seriesnumber)
+            End If
         Else
             REM  No series number so blank the form and present dropdown, checking first if there is data and redirecting if not.
             Panel2.Visible = False
             bind_existingseriesdropdown()
         End If
         BacktoDashboard.NavigateUrl = "/admin"
-        BacktoDashboard2.NavigateUrl = "/admin"
+        backtodashboard2.NavigateUrl = "/admin"
         'Cancel.PostBackUrl = "/property-admin"
     End Sub
 
