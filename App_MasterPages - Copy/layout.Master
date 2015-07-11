@@ -1,0 +1,116 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="layout.master.vb" Inherits="Customfeatures.UI.layout" %>
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title></title>
+
+    
+
+
+</head>
+<body class="pagebody" id="Body" runat="server">
+	<div id="art-main">
+		<div id="art-hmenu-bg" class="art-bar art-nav">
+	</div>
+<header class="art-header">
+
+    <div class="art-shapes">
+        
+            </div>
+
+<h1 class="art-headline">
+</h1>
+<h2 class="art-slogan">
+</h2>
+    <nav class="art-nav clearfix">
+<div class="art-nav-inner">
+
+</div>
+</nav>          
+</header>
+
+<div class="art-sheet clearfix">
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+	<div class="art-content-layout-row">
+
+			
+			<asp:contentplaceholder id="leftContent" runat="server">
+                xxx
+			</asp:contentplaceholder>
+
+		
+		
+		
+			<a id="startcontent"></a>
+			<asp:contentplaceholder id="mainContent" runat="server">
+                www
+			</asp:contentplaceholder>
+		
+		
+			<asp:contentplaceholder id="rightContent" runat="server">
+			</asp:contentplaceholder>
+		
+	</div>
+</div>
+            </div>
+    </div>
+<footer class="art-footer clearfix">
+	<div class="art-footer-inner">
+		<div class="art-content-layout">
+			<div class="art-content-layout-row">
+			<div class="art-layout-cell layout-item-0" style="width: 50%">
+					<p>
+						<br>
+					</p>
+					<p>
+						Copyright © 2011-2012. All Rights Reserved.
+					</p>
+					<p>
+		
+								|
+		
+
+		
+					</p>
+				</div>
+				<div class="art-layout-cell layout-item-0" style="width: 50%">
+					<p style="float:right;">
+<a href="#"><img width="64" height="64" alt="" src="https://s3-eu-west-1.amazonaws.com/seonyxcdn/Pokerconf/Images/facebook-icon.png" class=""></a>
+<a href="#"><img width="64" height="64" alt="" src="https://s3-eu-west-1.amazonaws.com/seonyxcdn/Pokerconf/Images/twitter-icon.png" class=""></a>
+<a href="#"><img width="64" height="64" alt="" src="https://s3-eu-west-1.amazonaws.com/seonyxcdn/Pokerconf/Images/youtube-icon.png" class=""></a>
+					</p>
+				</div>
+	</div>
+	</div>
+   </div>
+</footer>
+
+</div>	
+	
+	<div class="topnavwrap">
+		<div class="topnav">
+			<ul>
+		
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function HideMenuToolbar() { $("#toolbar").fadeOut(); $("#toolbarbut").fadeIn("slow"); }
+		function ShowMenuToolbar() { $("#toolbar").fadeIn(); $("#toolbarbut").fadeOut("slow"); }
+		$(document).ready(function () {
+			$("span.downarr a").click(function () { HideMenuToolbar(); Set_Cookie('openstate', 'closed') });
+			$("span.showbar a").click(function () { ShowMenuToolbar(); Set_Cookie('openstate', 'open') });
+			$("span.downarr a, span.showbar a").click(function () { return false; });
+			var openState = Get_Cookie('openstate');
+			if (openState != null) { if (openState == 'closed') { HideMenuToolbar(); } if (openState == 'open') { ShowMenuToolbar(); } }
+		});	
+	</script>
+
+	<div class="cleared">
+	</div>
+    						<asp:ContentPlaceHolder ID="pageEditContent" runat="server">
+				</asp:ContentPlaceHolder>		|
+
+</body>

@@ -1,0 +1,780 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Customfeatures.UI
+</name>
+</assembly>
+<members>
+<member name="P:Customfeatures.UI.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:Customfeatures.UI.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:Customfeatures.UI.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:Customfeatures.UI.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:Customfeatures.UI.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:Customfeatures.UI.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.pnlOuterWrap">
+	<summary>
+pnlOuterWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.ctop1">
+	<summary>
+ctop1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.pnlInnerWrap">
+	<summary>
+pnlInnerWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.heading">
+	<summary>
+heading control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.pnlOuterBody">
+	<summary>
+pnlOuterBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.pnlInnerBody">
+	<summary>
+pnlInnerBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.Panel1">
+	<summary>
+Panel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.existingseriesdropdown">
+	<summary>
+existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.msg_existingseriesdropdown">
+	<summary>
+msg_existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.chooseseriesbutton">
+	<summary>
+chooseseriesbutton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.backtodashboard2">
+	<summary>
+backtodashboard2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.Panel2">
+	<summary>
+Panel2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.chaptername">
+	<summary>
+chaptername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.chapternameRequiredFieldValidator">
+	<summary>
+chapternameRequiredFieldValidator control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.datechaptercreated">
+	<summary>
+datechaptercreated control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.ispublishedlabel">
+	<summary>
+ispublishedlabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.ischapterpublished">
+	<summary>
+ischapterpublished control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.friendlyurllabel">
+	<summary>
+friendlyurllabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.friendlyurllabellblError">
+	<summary>
+friendlyurllabellblError control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.friendlyurl">
+	<summary>
+friendlyurl control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.spnUrlWarning">
+	<summary>
+spnUrlWarning control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.checkurl">
+	<summary>
+checkurl control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.chaptertext">
+	<summary>
+chaptertext control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.chaptertext2">
+	<summary>
+chaptertext2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.editchapterbutton">
+	<summary>
+editchapterbutton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.BacktoDashboard">
+	<summary>
+BacktoDashboard control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.divCleared">
+	<summary>
+divCleared control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchaptereditor.cbottom1">
+	<summary>
+cbottom1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.Panel1">
+	<summary>
+Panel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.existingseriesdropdown">
+	<summary>
+existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.msg_existingseriesdropdown">
+	<summary>
+msg_existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.chooseseriesbutton">
+	<summary>
+chooseseriesbutton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.backtodashboard2">
+	<summary>
+backtodashboard2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.Panel2">
+	<summary>
+Panel2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.seriesname">
+	<summary>
+seriesname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.SeriesnameRequiredFieldValidator">
+	<summary>
+SeriesnameRequiredFieldValidator control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.dateseriescreated">
+	<summary>
+dateseriescreated control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.ispublishedlabel">
+	<summary>
+ispublishedlabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.isseriespublished">
+	<summary>
+isseriespublished control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.friendlyurllabel">
+	<summary>
+friendlyurllabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.friendlyurllabellblError">
+	<summary>
+friendlyurllabellblError control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.friendlyurl">
+	<summary>
+friendlyurl control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.spnUrlWarning">
+	<summary>
+spnUrlWarning control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.checkurl">
+	<summary>
+checkurl control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.editseriesbutton">
+	<summary>
+editseriesbutton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.BacktoDashboard">
+	<summary>
+BacktoDashboard control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.seriesdescription">
+	<summary>
+seriesdescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieseditor.listlabel">
+	<summary>
+listlabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewserieserror.BacktoDashboard">
+	<summary>
+BacktoDashboard control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.pnlOuterWrap">
+	<summary>
+pnlOuterWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.ctop1">
+	<summary>
+ctop1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.pnlInnerWrap">
+	<summary>
+pnlInnerWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.heading">
+	<summary>
+heading control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.pnlOuterBody">
+	<summary>
+pnlOuterBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.pnlInnerBody">
+	<summary>
+pnlInnerBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.existingseriesdropdown">
+	<summary>
+existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.msg_existingseriesdropdown">
+	<summary>
+msg_existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.newserieslabel">
+	<summary>
+newserieslabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.addnewseriesname">
+	<summary>
+addnewseriesname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.RequiredFieldValidator">
+	<summary>
+RequiredFieldValidator control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.submitnewnseriesname">
+	<summary>
+submitnewnseriesname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.Cancel">
+	<summary>
+Cancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.BacktoDashboard">
+	<summary>
+BacktoDashboard control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.divCleared">
+	<summary>
+divCleared control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewseries.cbottom1">
+	<summary>
+cbottom1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.pnlOuterWrap">
+	<summary>
+pnlOuterWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.ctop1">
+	<summary>
+ctop1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.pnlInnerWrap">
+	<summary>
+pnlInnerWrap control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.heading">
+	<summary>
+heading control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.pnlOuterBody">
+	<summary>
+pnlOuterBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.pnlInnerBody">
+	<summary>
+pnlInnerBody control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.existingseriesdropdown">
+	<summary>
+existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.msg_existingseriesdropdown">
+	<summary>
+msg_existingseriesdropdown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.newchapterlabel">
+	<summary>
+newchapterlabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.addnewchaptername">
+	<summary>
+addnewchaptername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.RequiredFieldValidator">
+	<summary>
+RequiredFieldValidator control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.submitnewchaptername">
+	<summary>
+submitnewchaptername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.Cancel">
+	<summary>
+Cancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.BacktoDashboard">
+	<summary>
+BacktoDashboard control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.divCleared">
+	<summary>
+divCleared control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.addnewchapter.cbottom1">
+	<summary>
+cbottom1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.list.newseriesbtn">
+	<summary>
+newseriesbtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.list.editseriesbtn">
+	<summary>
+editseriesbtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.list.newchapter">
+	<summary>
+newchapter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.list.editchapter">
+	<summary>
+editchapter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.Body">
+	<summary>
+Body control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.leftContent">
+	<summary>
+leftContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.mainContent">
+	<summary>
+mainContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.rightContent">
+	<summary>
+rightContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Customfeatures.UI.layout.pageEditContent">
+	<summary>
+pageEditContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>
