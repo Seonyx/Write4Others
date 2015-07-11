@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{5E1F7854-E7A2-4DEC-AD92-45A0D6F26882}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Customfeatures.UI</RootNamespace>
+    <AssemblyName>Customfeatures.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Customfeatures.UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Customfeatures.UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Business.WebHelpers\mojoPortal.Business.WebHelpers.csproj">
+      <Project>{4ead30ec-4f97-4f38-8530-1b7eddb8fc8e}</Project>
+      <Name>mojoPortal.Business.WebHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Business\mojoPortal.Business.csproj">
+      <Project>{8582d51e-126b-4d64-b080-07ad8245b38f}</Project>
+      <Name>mojoPortal.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Data.MSSQL\mojoPortal.Data.MSSQL.csproj">
+      <Project>{6ddfe292-37aa-4a02-b2f0-ba7968a026ef}</Project>
+      <Name>mojoPortal.Data.MSSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Features.Business\mojoPortal.Features.Business.csproj">
+      <Project>{65849992-8f44-4480-9494-1ca0d6325795}</Project>
+      <Name>mojoPortal.Features.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Features.Data.MSSQL\mojoPortal.Features.Data.MSSQL.csproj">
+      <Project>{2fb266b5-97f0-42eb-9f42-b6a7de749d29}</Project>
+      <Name>mojoPortal.Features.Data.MSSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Features.UI\mojoPortal.Features.UI.csproj">
+      <Project>{103f2b02-3224-48bc-b173-1f7e1c85178a}</Project>
+      <Name>mojoPortal.Features.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Net\mojoPortal.Net.csproj">
+      <Project>{30916752-1a97-49ca-95d6-81a5f784eeb5}</Project>
+      <Name>mojoPortal.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Web.Controls\mojoPortal.Web.Controls.csproj">
+      <Project>{a2dcd1e2-a5c3-4e37-a5f2-093659bc1c38}</Project>
+      <Name>mojoPortal.Web.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Web.Editor\mojoPortal.Web.Editor.csproj">
+      <Project>{4f6dda2c-c9b8-45b2-aada-3ff922317661}</Project>
+      <Name>mojoPortal.Web.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\mojoPortal.Web.Framework\mojoPortal.Web.Framework.csproj">
+      <Project>{e0d12031-bfdd-4069-9024-8b00a2aa6dbc}</Project>
+      <Name>mojoPortal.Web.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mojoportal\Web\mojoPortal.Web.csproj">
+      <Project>{8e511d65-4779-4689-82d4-811d3fe6866e}</Project>
+      <Name>mojoPortal.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\addnewchapter.aspx" />
+    <Content Include="Admin\addnewchaptereditor.aspx" />
+    <Content Include="Admin\addnewseries.aspx" />
+    <Content Include="Admin\addnewserieseditor.aspx" />
+    <Content Include="Admin\addnewserieserror.aspx" />
+    <Content Include="Admin\entryadmin.ascx" />
+    <Content Include="Admin\list.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\addnewchapter.aspx.designer.vb">
+      <DependentUpon>addnewchapter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewchapter.aspx.vb">
+      <DependentUpon>addnewchapter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addnewchaptereditor.aspx.designer.vb">
+      <DependentUpon>addnewchaptereditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewchaptereditor.aspx.vb">
+      <DependentUpon>addnewchaptereditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addnewseries.aspx.designer.vb">
+      <DependentUpon>addnewseries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewseries.aspx.vb">
+      <DependentUpon>addnewseries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addnewserieseditor.aspx.designer.vb">
+      <DependentUpon>addnewserieseditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewserieseditor.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>addnewserieseditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewserieserror.aspx.designer.vb">
+      <DependentUpon>addnewserieserror.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addnewserieserror.aspx.vb">
+      <DependentUpon>addnewserieserror.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\entryadmin.ascx.designer.vb">
+      <DependentUpon>entryadmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\entryadmin.ascx.vb">
+      <DependentUpon>entryadmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\list.aspx.designer.vb">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\list.aspx.vb">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\layout.Master.designer.vb">
+      <DependentUpon>layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\layout.Master.vb">
+      <DependentUpon>layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\layout.Master" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59770</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59770/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
