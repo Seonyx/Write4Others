@@ -170,11 +170,16 @@ Public Class addnewserieseditor
                     REM populate each field
                     seriesname.Text = myreader.Item("seriesname").ToString
                     REM - maybe adjust the counter (not working because the script isn't included) to be adapted to take off the used number of chars when loading.
-                    If (friendlyurl.Text.Length = 0) AndAlso (seriesname.Text.Length > 0) Then
+                    REM Adjust this so that we only suggest a friendly url if the url field in the db is empty
+                    Dim SeriesUrlindex As Integer = myreader.GetOrdinal("SeriesUrl")
+                    If myreader.IsDBNull(SeriesUrlindex) Then
                         Dim friendlyUrlbuf As [String]
                         friendlyUrlbuf = SiteUtils.SuggestFriendlyUrl(seriesname.Text, siteSettings)
                         friendlyurl.Text = "~/" & friendlyUrlbuf
+                    Else
+                        friendlyurl.Text = myreader.Item("SeriesUrl").ToString
                     End If
+
                     time = myreader.Item("DateSeriesCreated")
                     dateseriescreated.Text = time.ToString(format)
                     seriesdescription.Text = myreader.Item("SeriesDescription")
@@ -328,6 +333,5 @@ Public Class addnewserieseditor
             End Try
         End If
     End Sub
-
 
 End Class
