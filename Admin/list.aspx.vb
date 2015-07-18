@@ -55,6 +55,7 @@ Public Class list
         newseriesbtn.NavigateUrl = SiteRoot & modulepathadmin & "/addnewseries.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
         editseriesbtn.NavigateUrl = SiteRoot & modulepathadmin & "/addnewserieseditor.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
         newchapter.NavigateUrl = SiteRoot & modulepathadmin & "/addnewchapter.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
+        editchapter.NavigateUrl = SiteRoot & modulepathadmin & "/addnewchaptereditor.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
         'HyperLink1.NavigateUrl = "/property-admin"
         'Cancel.PostBackUrl = "/property-admin"
     End Sub
