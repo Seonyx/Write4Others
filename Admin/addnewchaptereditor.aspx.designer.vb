@@ -95,6 +95,33 @@ Partial Public Class addnewchaptereditor
     Protected WithEvents msg_existingseriesdropdown As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''listlabel2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents listlabel2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''existingchaptersdropdown control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents existingchaptersdropdown As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''msg_existingchaptersdropdown control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents msg_existingchaptersdropdown As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''chooseseriesbutton control.
     '''</summary>
     '''<remarks>
@@ -228,15 +255,6 @@ Partial Public Class addnewchaptereditor
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chaptertext As Global.mojoPortal.Web.Editor.EditorControl
-
-    '''<summary>
-    '''chaptertext2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chaptertext2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''editchapterbutton control.

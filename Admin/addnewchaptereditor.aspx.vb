@@ -16,6 +16,7 @@ Imports mojoPortal.Web.UI
 Imports mojoPortal.Web.Editor
 Imports mojoPortal.Net
 
+<SupportsEventValidation> _
 Public Class addnewchaptereditor
 
     Inherits mojoBasePage
@@ -25,7 +26,9 @@ Public Class addnewchaptereditor
     Dim home As String = ""
     Dim chapternumber As Integer = -1
     Dim seriesnumber As Integer = -1
-    Dim addnewserieseditor As String
+    Public addnewchaptereditor As String
+    Public addnewchaptereditorpart1 As String
+    Public addnewchaptereditorpart2 As String
     Dim errorstring As String = ""
     Private IsupdateItemurl As Boolean = False
     Private siteurl = ConfigurationManager.AppSettings("siteurl")
@@ -33,6 +36,7 @@ Public Class addnewchaptereditor
     Private modulepathadmin = ConfigurationManager.AppSettings("modulepathadmin")
     Private seriesGuid As Guid = Guid.Empty
     Public test As String = ""
+    Public dropdownseriesindex As Integer = -1
     Private Const featureGuid As String = "4d5b533a-b4db-47c8-94d0-9f1cabca94ac"
 
     Public Shared ReadOnly Property FeatureGuidGuid() As Guid
@@ -53,7 +57,10 @@ Public Class addnewchaptereditor
         mypageId = WebUtils.ParseInt32FromQueryString("pageid", mypageId)
         mymoduleId = WebUtils.ParseInt32FromQueryString("mid", mymoduleId)
         home = SiteRoot & "/default.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
-        'addnewserieseditor = SiteRoot & modulepathadmin & "/addnewserieseditor.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
+        addnewchaptereditor = SiteRoot & modulepathadmin & "/addnewchaptereditor.aspx?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
+        addnewchaptereditorpart1 = SiteRoot & modulepathadmin & "/addnewchaptereditor.aspx"
+        addnewchaptereditorpart2 = "?pageid=" & CStr(mypageId) & "&mid=" & CStr(mymoduleId)
+
         If Not UserCanViewPage(mymoduleId, FeatureGuidGuid) Then
             If Not Request.IsAuthenticated Then
                 SiteUtils.RedirectToLoginPage(Me)
@@ -63,7 +70,17 @@ Public Class addnewchaptereditor
             Return
         End If
         chapternumber = WebUtils.ParseInt32FromQueryString("cn", chapternumber)
-        If chapternumber = -1 Then chapternumber = 56
+        If chapternumber = -1 Then
+            Panel1.Visible = True
+            Panel2.Visible = False
+            If Not IsPostBack Then
+                Me.PopulateSeries()
+            End If
+            existingseriesdropdown.Attributes("onchange") = "populatechapter();"
+        Else
+            Panel1.Visible = False
+            Panel2.Visible = True
+        End If
 
         If chapternumber <> -1 Then
             REM there is an incoming chapter number so lookup series id of parent go populate the form.
@@ -174,7 +191,7 @@ Public Class addnewchaptereditor
             cn.Open()
             cmd.Connection = cn
             cmd.CommandText = strsql
-            errorstring = GetSQL(cmd)
+            errorstring = getSql(cmd)
             myreader = cmd.ExecuteReader
             If myreader.HasRows Then
                 Do While myreader.Read
@@ -218,10 +235,10 @@ Public Class addnewchaptereditor
         Return retval
     End Function
 
-    Protected Sub chooseseriesbutton_click(sender As Object, e As EventArgs) Handles chooseseriesbutton.Click
-        '    REM get the index of the dropdown and redirect to the same page with the sn argument
-        '    Dim seriesnumber As Integer = existingseriesdropdown.SelectedItem.Value
-        '    Response.Redirect(addnewserieseditor & "&sn=" & seriesnumber)
+    Protected Sub chooseseriesbutton_click(sender As Object, e As EventArgs) Handles chooseseriesbutton.Click, chooseseriesbutton.Click
+        '    REM get the index of the dropdown and redirect to the same page with the cn argument
+        Dim chapternumber As Integer = existingchaptersdropdown.SelectedItem.Value
+        Response.Redirect(addnewchaptereditor & "&cn=" & chapternumber)
     End Sub
 
     Sub updatedatabase()
@@ -274,7 +291,7 @@ Public Class addnewchaptereditor
 
             cmd.Connection = cn
             cmd.CommandText = strSQL
-            Dim tmpval As String = GetSQL(cmd)
+            Dim tmpval As String = getSql(cmd)
             cmd.ExecuteNonQuery()
             cn.Close()
             Response.Redirect(home)
@@ -285,25 +302,6 @@ Public Class addnewchaptereditor
         End Try
 
     End Sub
-
-    Public Function GetSQL(ByRef cmd As System.Data.SqlClient.SqlCommand) As String
-        REM This function takes an SQL command object and extracts the sql and the parameters, 
-        REM substitues them and returns a string that can be used as SQL for testing
-        'Dim P As New System.Data.OleDb.OleDbParameter
-        If cmd.CommandText Is Nothing Or cmd.CommandText.Length = 0 Then
-            GetSQL = "No SQL Found in command statement"
-            Return GetSQL
-        End If
-
-        Dim msg As String = ""
-        msg = cmd.CommandText
-
-        For Each p As System.Data.SqlClient.SqlParameter In cmd.Parameters
-            msg = msg.Replace(p.ParameterName, p.Value.ToString())
-        Next
-
-        GetSQL = msg
-    End Function
 
     Protected Sub bind_existingseriesdropdown()
         If Not IsPostBack Then
@@ -340,6 +338,43 @@ Public Class addnewchaptereditor
         End If
     End Sub
 
+    Protected Sub bind_existingchapterdropdown(seriesidindex)
+        If Not IsPostBack Then
+            msg_existingchaptersdropdown.Text = ""
+            Dim myreader As SqlDataReader
+            Dim cn As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim strsql As String = ""
+            cmd.Parameters.Add("@seriesID", SqlDbType.Int)
+            cmd.Parameters("@seriesID").Value = seriesidindex
+            strsql = "SELECT chapter.chaptername, chapter.ChapterID  FROM serieschapters where ParentSeriesId = @seriesid ORDER BY ChapterName asc"
+            cn.ConnectionString = ConfigurationManager.AppSettings("MSSQLConnectionString")
+            cn.Open()
+            cmd.Connection = cn
+            cmd.CommandText = strsql
+
+            Try
+                myreader = cmd.ExecuteReader
+
+                If myreader.HasRows Then
+                    existingchaptersdropdown.DataSource = myreader
+                    existingchaptersdropdown.DataValueField = "chapterid"
+                    existingchaptersdropdown.DataTextField = "chaptername"
+                    existingchaptersdropdown.DataBind()
+                Else
+                    msg_existingchaptersdropdown.Text = msg_existingchaptersdropdown.Text & " Error getting chapter list"
+                End If
+                myreader.Close()
+                cn.Close()
+            Catch ex As Exception
+                'msg_post.Text = "There was an error reading the database: " & ex.ToString
+
+                existingchaptersdropdown.Visible = False
+                msg_existingchaptersdropdown.Text = "No Chapter Found"
+            End Try
+        End If
+    End Sub
+
     Protected Sub editchapterbutton_Click(sender As Object, e As EventArgs) Handles editchapterbutton.Click
         If IsPostBack Then
             updatedatabase()
@@ -362,7 +397,7 @@ Public Class addnewchaptereditor
             cn.Open()
             cmd.Connection = cn
             cmd.CommandText = strsql
-            errorstring = GetSQL(cmd)
+            errorstring = getSql(cmd)
             myreader = cmd.ExecuteReader
             If myreader.HasRows Then
                 Do While myreader.Read
@@ -383,6 +418,158 @@ Public Class addnewchaptereditor
             retval = -1
         End Try
         Return retval
+    End Function
+
+    Private Sub PopulateSeries()
+        Dim strConnString As String = ConfigurationManager.AppSettings("MSSQLConnectionString")
+        Dim strQuery As String = "select SeriesID, SeriesName from Series order by seriesname asc"
+        Dim strQuerytop1 As String = "select top 1 SeriesID from Series order by seriesname asc"
+        Dim con As SqlConnection = New SqlConnection(strConnString)
+        Dim cmd As SqlCommand = New SqlCommand
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = strQuery
+        cmd.Connection = con
+        con.Open()
+        existingseriesdropdown.DataSource = cmd.ExecuteReader
+        existingseriesdropdown.DataTextField = "SeriesName"
+        existingseriesdropdown.DataValueField = "SeriesID"
+        existingseriesdropdown.DataBind()
+        con.Close()
+
+        PopulateChapters(getsqlindex(strQuerytop1))
+    End Sub
+
+    <System.Web.Services.WebMethod()> _
+    Public Shared Function PopulateChapters(ByVal SeriesId As Integer) As ArrayList
+        Dim list As ArrayList = New ArrayList
+        Dim strConnString As String = ConfigurationManager.AppSettings("MSSQLConnectionString")
+        Dim strQuery As String = "select chapterID, chapterName from SeriesChapters where ParentSeriesID=@SeriesID"
+        Dim con As SqlConnection = New SqlConnection(strConnString)
+        Dim cmd As SqlCommand = New SqlCommand
+        cmd.CommandType = CommandType.Text
+        'cmd.Parameters.AddWithValue("@ChapterID", SeriesId)
+        cmd.CommandText = strQuery
+        cmd.Parameters.AddWithValue("@SeriesID", SeriesId)
+        Dim tmpval As String = getSql(cmd)
+        cmd.Connection = con
+        con.Open()
+        Dim sdr As SqlDataReader = cmd.ExecuteReader
+        While sdr.Read
+            list.Add(New ListItem(sdr("ChapterName").ToString, sdr("ChapterID").ToString))
+        End While
+        con.Close()
+        'RegisterForEventValidation("existingchaptersdropdown", list)
+        Return list
+    End Function
+
+    Public Shared Function ParameterValueForSQL(sp As SqlParameter) As String
+        Dim retval As String = ""
+
+        Select Case sp.SqlDbType
+            Case SqlDbType.[Char], SqlDbType.NChar, SqlDbType.NText, SqlDbType.NVarChar, SqlDbType.Text, SqlDbType.Time, _
+                SqlDbType.VarChar, SqlDbType.Xml, SqlDbType.[Date], SqlDbType.DateTime, SqlDbType.DateTime2, SqlDbType.DateTimeOffset
+                If sp.Value = DBNull.Value Then
+                    retval = "NULL"
+                Else
+                    retval = "'" + sp.Value.ToString().Replace("'", "''") + "'"
+                End If
+                Exit Select
+
+            Case SqlDbType.Bit
+                If sp.Value = DBNull.Value Then
+                    retval = "NULL"
+                Else
+                    retval = If((CBool(sp.Value) = False), "0", "1")
+                End If
+                Exit Select
+            Case Else
+
+                If Not IsDBNull(sp.Value) Then
+                    retval = "NULL"
+                Else
+                    retval = sp.Value.ToString().Replace("'", "''")
+                End If
+                Exit Select
+        End Select
+
+        Return retval
+    End Function
+
+    Public Shared Function getSql(sc As SqlCommand) As String
+        Dim sql As String = sc.CommandText
+
+        sql = sql.Replace(vbCr & vbLf, "").Replace(vbCr, "").Replace(vbLf, "")
+        sql = System.Text.RegularExpressions.Regex.Replace(sql, "\s+", " ")
+
+        For Each sp As SqlParameter In sc.Parameters
+            Dim spName As String = sp.ParameterName
+            Dim spValue As String = ParameterValueForSQL(sp)
+            sql = sql.Replace(spName, spValue)
+        Next
+
+        sql = sql.Replace("= NULL", "IS NULL")
+        sql = sql.Replace("!= NULL", "IS NOT NULL")
+        Return sql
+    End Function
+
+    Private Sub Populatechapters(seriesid)
+        'Dim seriesidindex As Integer = -1
+        REM use the sql to get the id of the first record
+        'seriesidindex = getsqlindex(strSQL)
+        If seriesid <> -1 Then
+            Dim strConnString As String = ConfigurationManager.AppSettings("MSSQLConnectionString")
+            Dim strQuery As String = "select chapterID, chapterName from serieschapters where ParentSeriesId = @seriesid order by chaptername asc"
+            Dim con As SqlConnection = New SqlConnection(strConnString)
+            Dim cmd As SqlCommand = New SqlCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Parameters.Add("@seriesID", SqlDbType.Int)
+            cmd.Parameters("@seriesID").Value = seriesid
+            cmd.CommandText = strQuery
+            cmd.Connection = con
+            con.Open()
+            existingchaptersdropdown.DataSource = cmd.ExecuteReader
+            existingchaptersdropdown.DataTextField = "chapterName"
+            existingchaptersdropdown.DataValueField = "chapterID"
+            existingchaptersdropdown.DataBind()
+            con.Close()
+        Else
+            existingchaptersdropdown.Visible = False
+            listlabel2.visible = False
+        End If
+
+    End Sub
+
+    Function getsqlindex(strSQL)
+        Dim retval As Integer = -1
+        Try
+            Dim myreader As SqlDataReader
+            Dim cn As New SqlConnection
+            Dim cmd As New SqlCommand
+            cn.ConnectionString = ConfigurationManager.AppSettings("MSSQLConnectionString")
+            cn.Open()
+            cmd.Connection = cn
+            cmd.CommandText = strSQL
+            myreader = cmd.ExecuteReader
+            If myreader.HasRows Then
+                Do While myreader.Read
+
+                    Dim seriesidindex As Integer = myreader.GetOrdinal("seriesid")
+                    If myreader.IsDBNull(seriesidindex) Then
+                        retval = -1
+                    Else
+                        retval = myreader.Item("seriesid").ToString
+                    End If
+                Loop
+            Else
+                retval = -1
+            End If
+            myreader.Close()
+            cn.Close()
+        Catch ex As Exception
+            retval = -1
+        End Try
+        Return retval
+
     End Function
 
 End Class
